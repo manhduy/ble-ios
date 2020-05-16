@@ -35,7 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		84FAA84F246F8B24006A6902 /* ble-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ble-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84FAA84F246F8B24006A6902 /* BLE Peripheral.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BLE Peripheral.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FAA852246F8B24006A6902 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84FAA854246F8B24006A6902 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		84FAA856246F8B24006A6902 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 		84FAA850246F8B24006A6902 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				84FAA84F246F8B24006A6902 /* ble-ios.app */,
+				84FAA84F246F8B24006A6902 /* BLE Peripheral.app */,
 				84FAA865246F8B28006A6902 /* ble-iosTests.xctest */,
 				84FAA870246F8B28006A6902 /* ble-iosUITests.xctest */,
 			);
@@ -145,7 +145,7 @@
 			);
 			name = "ble-ios";
 			productName = "ble-ios";
-			productReference = 84FAA84F246F8B24006A6902 /* ble-ios.app */;
+			productReference = 84FAA84F246F8B24006A6902 /* BLE Peripheral.app */;
 			productType = "com.apple.product-type.application";
 		};
 		84FAA864246F8B28006A6902 /* ble-iosTests */ = {
@@ -435,13 +435,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6Q8FBLP556;
 				INFOPLIST_FILE = "ble-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.duyha.ble-ios";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.duyha.ble;
+				PRODUCT_NAME = "BLE Peripheral";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -452,13 +454,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6Q8FBLP556;
 				INFOPLIST_FILE = "ble-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.duyha.ble-ios";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.duyha.ble;
+				PRODUCT_NAME = "BLE Peripheral";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
