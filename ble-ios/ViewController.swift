@@ -11,13 +11,10 @@ import CoreBluetooth
 
 class ViewController: UIViewController, CBPeripheralManagerDelegate {
     
-
     @IBOutlet var messageLabel: UILabel!
-    @IBOutlet var readValueLabel: UILabel!
-    @IBOutlet var writeValueLabel: UILabel!
+    @IBOutlet var viewLed: UIView!
     
     private var peripheralManager : CBPeripheralManager!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,19 +41,20 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate {
         }
     }
     
-    private var service: CBUUID!
-    private let value = "AD34E"
-    private var SERVICE_UUID = "00000000-0000-0000-0000-000000000000"
+    private var serviceUUID: CBUUID!
+    private let CHAR_VAL_RED = "RED"
+    private let CHAR_VAL_GREEN = "GREEN"
+    private let SERVICE_UUID = "00000000-0000-0000-0000-000000000000"
     func addServices() {
          // 1. Create instance of CBMutableCharcateristic
         let myChar = CBMutableCharacteristic(type: CBUUID(nsuuid: createDefaultUUID()), properties: [.notify, .write, .read], value: nil, permissions: [.readable, .writeable])
         // 2. Create instance of CBMutableService
-        service = CBUUID(nsuuid: createDefaultUUID())
-        let myService = CBMutableService(type: service, primary: true)
+        serviceUUID = CBUUID(nsuuid: createDefaultUUID())
+        let service = CBMutableService(type: serviceUUID, primary: true)
         // 3. Add characteristics to the service
-        myService.characteristics = [myChar]
+        service.characteristics = [myChar]
         // 4. Add service to peripheralManager
-        peripheralManager.add(myService)
+        peripheralManager.add(service)
         // 5. Start advertising
         startAdvertising()
     }
@@ -67,34 +65,21 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate {
     
     func startAdvertising() {
         messageLabel.text = "Advertising Data"
-        peripheralManager.startAdvertising([CBAdvertisementDataLocalNameKey : "BLEPeripheralApp", CBAdvertisementDataServiceUUIDsKey :     [service]])
+        peripheralManager.startAdvertising([CBAdvertisementDataLocalNameKey : "BLEPeripheral", CBAdvertisementDataServiceUUIDsKey: [serviceUUID]])
         print("Started Advertising")
     }
     
     func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveWrite requests: [CBATTRequest]) {
-        messageLabel.text = "Writing Data"
+        print("Writing Data")
         if let value = requests.first?.value {
-            writeValueLabel.text = value.base64EncodedString()
-            //Perform here your additional operations on the data.
+            if (value.base64EncodedString() == CHAR_VAL_RED.toBase64()) {
+                messageLabel.text = "Writing RED"
+                viewLed.backgroundColor = UIColor.red
+            } else if (value.base64EncodedString() == CHAR_VAL_GREEN.toBase64()) {
+                messageLabel.text = "Writing GREEN"
+                viewLed.backgroundColor = UIColor.green
+            }
         }
     }
-    
-    func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveRead request: CBATTRequest) {
-        messageLabel.text = "Data getting Read"
-        readValueLabel.text = value
-        // Perform your additional operations here
-    }
-
-
-}
-extension Data {
- struct HexEncodingOptions: OptionSet {
-     let rawValue: Int
-     static let upperCase = HexEncodingOptions(rawValue: 1 << 0)
- }
- func hexEncodedString(options: HexEncodingOptions = []) -> String {
-     let format = options.contains(.upperCase) ? "%02hhX" : "%02hhx"
-     return map { String(format: format, $0) }.joined()
- }
 }
 

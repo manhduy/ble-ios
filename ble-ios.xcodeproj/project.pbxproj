@@ -15,6 +15,9 @@
 		84FAA85F246F8B27006A6902 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FAA85D246F8B27006A6902 /* LaunchScreen.storyboard */; };
 		84FAA86A246F8B28006A6902 /* ble_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAA869246F8B28006A6902 /* ble_iosTests.swift */; };
 		84FAA875246F8B28006A6902 /* ble_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAA874246F8B28006A6902 /* ble_iosUITests.swift */; };
+		84FB72FA246FEF880033A537 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB72F9246FEF880033A537 /* UIViewExtension.swift */; };
+		84FB72FD246FF2B70033A537 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84FB72FC246FF2B70033A537 /* Colors.xcassets */; };
+		84FB72FF246FFFAC0033A537 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB72FE246FFFAC0033A537 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		84FAA870246F8B28006A6902 /* ble-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ble-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FAA874246F8B28006A6902 /* ble_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ble_iosUITests.swift; sourceTree = "<group>"; };
 		84FAA876246F8B28006A6902 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84FB72F9246FEF880033A537 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		84FB72FC246FF2B70033A537 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		84FB72FE246FFFAC0033A537 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,11 +105,12 @@
 		84FAA851246F8B24006A6902 /* ble-ios */ = {
 			isa = PBXGroup;
 			children = (
+				84FB72FB246FF29E0033A537 /* assets */,
+				84FB72F8246FEEEE0033A537 /* extension */,
 				84FAA852246F8B24006A6902 /* AppDelegate.swift */,
 				84FAA854246F8B24006A6902 /* SceneDelegate.swift */,
 				84FAA856246F8B24006A6902 /* ViewController.swift */,
 				84FAA858246F8B24006A6902 /* Main.storyboard */,
-				84FAA85B246F8B27006A6902 /* Assets.xcassets */,
 				84FAA85D246F8B27006A6902 /* LaunchScreen.storyboard */,
 				84FAA860246F8B27006A6902 /* Info.plist */,
 			);
@@ -126,6 +133,24 @@
 				84FAA876246F8B28006A6902 /* Info.plist */,
 			);
 			path = "ble-iosUITests";
+			sourceTree = "<group>";
+		};
+		84FB72F8246FEEEE0033A537 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				84FB72F9246FEF880033A537 /* UIViewExtension.swift */,
+				84FB72FE246FFFAC0033A537 /* StringExtension.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
+		84FB72FB246FF29E0033A537 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				84FAA85B246F8B27006A6902 /* Assets.xcassets */,
+				84FB72FC246FF2B70033A537 /* Colors.xcassets */,
+			);
+			path = assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84FAA85F246F8B27006A6902 /* LaunchScreen.storyboard in Resources */,
+				84FB72FD246FF2B70033A537 /* Colors.xcassets in Resources */,
 				84FAA85C246F8B27006A6902 /* Assets.xcassets in Resources */,
 				84FAA85A246F8B24006A6902 /* Main.storyboard in Resources */,
 			);
@@ -261,6 +287,8 @@
 			files = (
 				84FAA857246F8B24006A6902 /* ViewController.swift in Sources */,
 				84FAA853246F8B24006A6902 /* AppDelegate.swift in Sources */,
+				84FB72FF246FFFAC0033A537 /* StringExtension.swift in Sources */,
+				84FB72FA246FEF880033A537 /* UIViewExtension.swift in Sources */,
 				84FAA855246F8B24006A6902 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

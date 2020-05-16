@@ -16,34 +16,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xsk-n2-nCt" userLabel="led">
+                                <rect key="frame" x="147" y="393" width="120" height="120"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="BK0-gz-ECQ"/>
+                                    <constraint firstAttribute="height" constant="120" id="pYH-eX-AIU"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="60"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jwu-PZ-n9b" userLabel="message">
-                                <rect key="frame" x="186" y="442.5" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value To Be Read:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28x-mf-web">
-                                <rect key="frame" x="30" y="483.5" width="137.5" height="21"/>
-                                <accessibility key="accessibilityConfiguration" label="aaa"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qwb-66-ooh" userLabel="readValue">
-                                <rect key="frame" x="175" y="483.5" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value Written Is:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7te-tp-KRz">
-                                <rect key="frame" x="30" y="526" width="124" height="21"/>
-                                <accessibility key="accessibilityConfiguration" label="aaa"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRd-1G-7gD" userLabel="writeValue">
-                                <rect key="frame" x="175" y="526" width="42" height="21"/>
+                                <rect key="frame" x="186" y="533" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -51,23 +44,16 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="YRd-1G-7gD" firstAttribute="centerY" secondItem="7te-tp-KRz" secondAttribute="centerY" id="1o0-lw-Pgq"/>
-                            <constraint firstItem="YRd-1G-7gD" firstAttribute="leading" secondItem="7te-tp-KRz" secondAttribute="trailing" constant="21" id="9x7-ge-Yg2"/>
-                            <constraint firstItem="Qwb-66-ooh" firstAttribute="leading" secondItem="28x-mf-web" secondAttribute="trailing" constant="7.5" id="Cyb-cG-O3i"/>
-                            <constraint firstItem="Jwu-PZ-n9b" firstAttribute="bottom" secondItem="28x-mf-web" secondAttribute="top" constant="-20" id="IDD-d2-ws7"/>
-                            <constraint firstItem="Jwu-PZ-n9b" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="jcg-5g-uGZ"/>
-                            <constraint firstItem="7te-tp-KRz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="lnC-ul-V3O"/>
-                            <constraint firstItem="7te-tp-KRz" firstAttribute="top" secondItem="28x-mf-web" secondAttribute="bottom" constant="21.5" id="oIJ-Su-3Ca"/>
+                            <constraint firstItem="xsk-n2-nCt" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="B6U-pc-Ll6"/>
+                            <constraint firstItem="Jwu-PZ-n9b" firstAttribute="top" secondItem="xsk-n2-nCt" secondAttribute="bottom" constant="20" id="I4l-Tq-azy"/>
+                            <constraint firstItem="xsk-n2-nCt" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="UUi-Sx-AzV"/>
                             <constraint firstItem="Jwu-PZ-n9b" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="x9T-Ga-8SR"/>
-                            <constraint firstItem="28x-mf-web" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="xHG-v8-sFQ"/>
-                            <constraint firstItem="Qwb-66-ooh" firstAttribute="centerY" secondItem="28x-mf-web" secondAttribute="centerY" id="yMi-pw-JMv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="messageLabel" destination="Jwu-PZ-n9b" id="uC7-JK-c42"/>
-                        <outlet property="readValueLabel" destination="Qwb-66-ooh" id="4r6-0j-qvQ"/>
-                        <outlet property="writeValueLabel" destination="YRd-1G-7gD" id="c5b-3O-jiK"/>
+                        <outlet property="viewLed" destination="xsk-n2-nCt" id="7ir-Bd-yGY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
