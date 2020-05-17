@@ -31,6 +31,9 @@ public class BlePeripheral: NSObject, CBPeripheralManagerDelegate {
         peripheralDelegate = delegate
     }
     
+    
+    /// Delete event of CBPeripheralManagerDelegate
+    /// - Parameter peripheral: The peripheral manager whose state has changed.
     public func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
         switch peripheral.state {
             case .unknown:
@@ -81,6 +84,11 @@ public class BlePeripheral: NSObject, CBPeripheralManagerDelegate {
         print("Started Advertising")
     }
     
+    
+    /// Delete event of CBPeripheralManagerDelegate
+    /// - Parameters:
+    ///   - peripheral: The peripheral manager requesting this information.
+    ///   - requests: A list of one or more <code>CBATTRequest</code> objects.
     public func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveWrite requests: [CBATTRequest]) {
         if let value = requests.first?.value {
             if (value.base64EncodedString() == CHAR_VAL_RED.toBase64()) {
@@ -99,25 +107,21 @@ public class BlePeripheral: NSObject, CBPeripheralManagerDelegate {
     }
 }
 
-/*
-* @typedef PeripheralError
-* @brief A list of Peripheral error type.
-* @constant OldCarTypeModelT A cool old car.
-* @constant unknown Bluetooth device is unknown.
-* @constant unsupported Bluetooth device is unsupported.
-* @constant unauthorized Bluetooth device is unauthorized.
-* @constant resetting Bluetooth device is resetting.
-* @constant poweredOff Bluetooth device is off.
-*/
+/// A list of Peripheral error type.
 public enum PeripheralError : Int {
 
+    ///Bluetooth device is unknown.
     case unknown
 
+    ///Bluetooth device is unsupported.
     case unsupported
 
+    ///Bluetooth device is unauthorized.
     case unauthorized
     
+    ///Bluetooth device is resetting.
     case resetting
 
+    ///Bluetooth device is off.
     case poweredOff
 }

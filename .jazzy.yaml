@@ -1,0 +1,17 @@
+# Ordered by output of `jazzy — help config`
+output: ios-blelib-docs
+clean: true
+xcodebuild_arguments:
+- -workspace
+- ble-ios.xcworkspace
+- -scheme
+- ble-ios
+- CODE_SIGNING_ALLOWED = NO
+author: Duy Ha
+module: blelib
+module_version: 1.0
+copyright: Copyright Duy Ha
+min_acl: public
+# Options : [apple | fullwidth | jony | DIRPATH]
+# Which theme to use. Specify either ‘apple’ (default), one of the other built-in theme names, or the path to your mustache templates and other assets for a custom theme.Default: apple
+theme: apple
