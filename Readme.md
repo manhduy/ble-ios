@@ -6,7 +6,7 @@ BlePeripheral is a wrapper library for easy establishing a BlePeripheral.
 
 ### Add blelib to your workspace
 
-Add first, add blelib module to your workspace. In Project Navigator, blelib should appear.
+At first, add blelib module to your workspace. In Project Navigator, blelib should appear.
 
 ![image info](./docs-images/add_blelib.png)
 
@@ -52,18 +52,6 @@ class ViewController: UIViewController, BlePeripheralDelegate {
         // Your logic code
     }
 
-```
-
-###
-
-You can start BLE Central normally, but it is better to use viewModelScope:
-
-```swift
-viewModelScope.launch {
-    withContext(Dispatchers.IO) {
-        bleCentral.start()
-    }
-}
 ```
 
 ### Stop the BlePeripheral
