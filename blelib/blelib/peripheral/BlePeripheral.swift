@@ -9,6 +9,8 @@
 import Foundation
 import CoreBluetooth
 
+
+/// A wrapper class of CBPeripheralManager
 public class BlePeripheral: NSObject, CBPeripheralManagerDelegate {
     
     private var peripheralDelegate: BlePeripheralDelegate?
@@ -20,6 +22,9 @@ public class BlePeripheral: NSObject, CBPeripheralManagerDelegate {
     
     private var peripheralManager : CBPeripheralManager!
     
+    
+    /// Initialize BlePeripheral
+    /// - Parameter delegate: The delegate object that will receive peripheral events.
     public init(delegate: BlePeripheralDelegate) {
         super.init()
         peripheralManager = CBPeripheralManager(delegate: self, queue: nil)
@@ -86,12 +91,24 @@ public class BlePeripheral: NSObject, CBPeripheralManagerDelegate {
         }
     }
     
+    
+    /// Stop advertising and release BlePeripheral object
     public func stopPeripheral() {
         peripheralManager.stopAdvertising()
         peripheralManager = nil
     }
 }
 
+/*
+* @typedef PeripheralError
+* @brief A list of Peripheral error type.
+* @constant OldCarTypeModelT A cool old car.
+* @constant unknown Bluetooth device is unknown.
+* @constant unsupported Bluetooth device is unsupported.
+* @constant unauthorized Bluetooth device is unauthorized.
+* @constant resetting Bluetooth device is resetting.
+* @constant poweredOff Bluetooth device is off.
+*/
 public enum PeripheralError : Int {
 
     case unknown
