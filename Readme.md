@@ -8,11 +8,13 @@ BlePeripheral is a wrapper library for easy establishing a BlePeripheral.
 
 Add first, add blelib module to your workspace. In Project Navigator, blelib should appear.
 
-[image info](docs-images/add_blelib.png)
+![image info](docs-images/add_blelib.png)
 
 ### Add blelib to your iOS app module
 
 In Project Navigator, select your app. Then select General. Under Frameworks, Libraries, and Embedded Content click (+). Then select blelib.
+
+![image info](docs-images/add_lib_to_ios_app.png)
 
 ### Create BlePeripheral instance in your UIViewController
 
