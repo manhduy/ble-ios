@@ -66,4 +66,4 @@ override func viewDidDisappear(_ animated: Bool) {
 
 ```
 
-### [Library Document](ios-blelib-docs/index.html)
+### [Library Document](https://manhduy.github.io/ios-blelib-docs/)
